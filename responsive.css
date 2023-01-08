@@ -1,0 +1,67 @@
+@media (max-width: 910px) {
+    main {
+        min-height: 900px;
+    }
+
+    body header {
+        width: 100%;
+    }
+
+    body header h1 {
+        float: none;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .recive {
+        float: none;
+        width: 100%;
+        height: 75%;
+    }
+
+    .recive textarea {
+        margin: 10px auto;
+    }
+
+    .recive p {
+        margin-left: 20px;
+    }
+
+    .return {
+        width: 100%;
+        height: 25%;
+    }
+
+    .muneco {
+        display: none;
+    }
+
+    .return .container {
+        height: 100%;
+        margin: 20px auto;
+    }
+
+    .return .container .message{
+        top: -80%;
+    }
+
+    .return textarea{
+        height: 43%;
+    }
+}
+
+@media (max-width: 500px) {
+    .buttonrecive{
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .recive textarea {
+    height: 70%;
+    }
+
+    .return textarea{
+        height: 50%;
+    }
+}

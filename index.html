@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Encriptador | One Oracle</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>
+                <img src="imagenes/Logo.png" alt="LogoAlura">
+            </h1>
+        </header>
+        <main>
+            <div class="recive">
+                <textarea name="text" id="text" placeholder="Enter the text you want to encrypt / decrypt"
+                    required></textarea>
+                <p>Enter only lowercase letters and no accents.</p>
+                <input id="button1" class="buttonrecive" type="button" value="Encrypt">
+                <input id="button2" class="buttonrecive" type="button" value="Decrypt">
+            </div>
+            <div class="return">
+                <div class="container">
+                    <textarea name="encrypt" id="encrypt"></textarea>
+                    <input id="button3" class="buttonreturn" type="button" value="Copy">
+                    <img src="imagenes/Muñeco.png" alt="Muneco" class="muneco">
+                    <p class="message">No message was found</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Alura Challenges | &copy; Developed by Jesús Ramírez.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("button1").addEventListener("click", function () {
+            var text = document.getElementById("text").value;
+
+            text = text.replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
+
+            document.querySelector('.muneco').style.display = 'none';
+            document.querySelector('.message').style.display = 'none';
+
+            document.getElementById("encrypt").value = text;
+        });
+
+        document.getElementById("button2").addEventListener("click", function () {
+            var text = document.getElementById("text").value;
+
+            text = text.replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+
+            document.querySelector('.muneco').style.display = 'none';
+            document.querySelector('.message').style.display = 'none';
+
+            document.getElementById("encrypt").value = text;
+        });
+
+        document.getElementById("button3").addEventListener("click", function () {
+            var textarea = document.getElementById("encrypt");
+
+            textarea.select();
+
+            document.execCommand("copy");
+        });
+    </script>
+</body>
+
+</html>
